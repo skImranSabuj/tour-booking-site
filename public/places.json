@@ -1,0 +1,86 @@
+[
+    {
+        "key": 1,
+        "place_name": "The Great Wall of China",
+        "country": "China",
+        "days": 2,
+        "cost": "$1274",
+        "status": "pending",
+        "thumb": "https://i.ibb.co/6rj2qSh/p1.jpg",
+        "rating": 4.85,
+        "about": "Biopsy of scrotum or tunica vaginalis",
+        "description": "Unspecified open wound of right ring finger with damage to nail, initial encounter"
+    },
+    {
+        "key": 2,
+        "place_name": "El Nido",
+        "country": "Philippines",
+        "days": 5,
+        "cost": "$99.34",
+        "status": "pending",
+        "thumb": "https://i.ibb.co/5vBMPtW/p8.jpg",
+        "rating": 4.76,
+        "about": "El Nido is a Philippine municipality on Palawan island. It’s known for white-sand beaches and coral reefs.",
+        "description": "El Nido is a Philippine municipality on Palawan island. It’s known for white-sand beaches and coral reefs."
+    },
+    {
+        "key": 3,
+        "place_name": "Chengdu",
+        "country": "China",
+        "days": 28,
+        "cost": "$13080.50",
+        "status": "pending",
+        "thumb": "https://i.ibb.co/Rbzh0RS/p3.jpg",
+        "rating": 2.76,
+        "about": "Anshun coverd Bridges",
+        "description": "The Anshun Bridge is a bridge in the provincial capital of Chengdu in Sichuan, China"
+    },
+    {
+        "key": 4,
+        "place_name": "Porto",
+        "country": "Portugal",
+        "days": 3,
+        "cost": "$7234.29",
+        "status": "pending",
+        "thumb": "https://i.ibb.co/rmHkbJM/p4.jpg",
+        "rating": 4.55,
+        "about": "Endoscopic excision or destruction of lesion of duodenum",
+        "description": "Endoscopic excision or destruction of lesion of duodenum"
+    },
+    {
+        "key": 5,
+        "place_name": "Al Manşūrah",
+        "country": "Egypt",
+        "days": 2,
+        "cost": "$9991.62",
+        "status": "pending",
+        "thumb": "https://i.ibb.co/NLFTb2c/p5.jpg",
+        "rating": 4.62,
+        "about": "Al Ahram, Giza Governorate, Egypt",
+        "description": "Influences of the past — Stories, desire and a vivid imagination attract people to this place."
+    },
+    {
+        "key": 6,
+        "place_name": "The Mosque of Rifai",
+        "country": "Egypt",
+        "days": 26,
+        "cost": "$16164.94",
+        "status": "pending",
+        "thumb": "https://i.ibb.co/kBJRDRN/p6.jpg",
+        "rating": 2.92,
+        "about": "Published on October 28, 2019",
+        "description": "The Mosque of Rifai and Sultan Hassan is truly an architectural miracle"
+    },
+    {
+        "key": 7,
+        "place_name": "Kanash",
+        "country": "Russia",
+        "days": 13,
+        "cost": "$11323.37",
+        "status": "pending",
+        "thumb": "https://i.ibb.co/r4TwDp4/p7.jpg",
+        "rating": 4.19,
+        "about": "Incision of mastoid",
+        "description": "Struck by nonvenomous lizards, sequela"
+    }
+]
