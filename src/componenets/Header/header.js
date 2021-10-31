@@ -29,9 +29,9 @@ const Header = () => {
                             {/* <Nav.Link as={Link} to="/services">Places</Nav.Link> */}
                             <Nav.Link as={Link} to="/about">About</Nav.Link>
                             <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
-                            <Nav.Link as={Link} to="/addService">Add Service</Nav.Link>
-                            <Nav.Link as={Link} to="/allbooking">All Bookings</Nav.Link>
-                            <Nav.Link as={Link} to="/myBookings">My Bookings</Nav.Link>
+                            {user.email ? <Nav.Link as={Link} to="/addService">Add Service</Nav.Link> : ''}
+                            {user.email ? <Nav.Link as={Link} to="/myBookings">My Bookings</Nav.Link> : ''}
+                            <Nav.Link as={Link} to="/allbookings">All Bookings</Nav.Link>
 
                         </Nav>
                         <Nav>

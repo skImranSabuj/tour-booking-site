@@ -20,7 +20,7 @@ import MyBookings from './pages/MyBookings/MyBookings';
 
 function App() {
   return (
-    <div className="bg-light">
+    <div className="App-header bg-light">
       <AuthProvider>
         <Router>
           <Route>
@@ -42,7 +42,7 @@ function App() {
             <PrivateRoute path="/booking/:id">
               <Booking></Booking>
             </PrivateRoute>
-            <PrivateRoute path="/allbooking">
+            <PrivateRoute path="/allbookings">
               <AllBookings></AllBookings>
             </PrivateRoute>
             <PrivateRoute path="/addService">
