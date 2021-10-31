@@ -32,6 +32,7 @@ const AddPlace = () => {
                 <input type="number" {...register("cost")} placeholder="Estimated Cost" />
                 <input type="number" {...register("days")} placeholder="how Long (Days)" />
                 <input type="number" {...register("rating")} placeholder="Rate the place out of 5" />
+                <input type="text" {...register("thumb")} placeholder="Add a image URL" />
 
                 <input type="submit" />
             </form>
