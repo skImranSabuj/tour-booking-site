@@ -1,19 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Table } from 'react-bootstrap';
+import { useLocation } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 import usePlaces from '../../hooks/usePlaces';
 
 const MyBookings = () => {
     const [bookings, setBookings] = useState([]);
-    const [myBook, setMyBook] = useState([]);
-    // const [places, setPlaces] = useState([]);
+    const location = useLocation();
+
+
     const { user } = useAuth();
-    const places = usePlaces();
-    // useEffect(() => {
-    //     fetch('https://damp-wildwood-05961.herokuapp.com/places')
-    //         .then(res => res.json())
-    //         .then(data => setPlaces(data));
-    // }, []);
+
     useEffect(() => {
         fetch('https://damp-wildwood-05961.herokuapp.com/bookings')
             .then(res => res.json())
@@ -21,14 +18,7 @@ const MyBookings = () => {
     }, []);
 
     const myBookings = bookings.filter(booking => booking.email === user.email);
-    // setMyBook(myBookings);
-    console.log('myBookings:', myBookings);
-    // console.log('myBook:', myBook);
-    // const myPlaceId = [];
-    // myBookings.map(booking => myPlaceId.push(Object.keys(booking.bookings)))
-    // const myPlaceId = Object.keys(myBookings?.bookings);
-    // const myPlaces = places.filter(places => places._id === myBookings.bookings?.keys());
-    // console.log('myPlaces', myPlaceId);
+
 
 
     const handleCancel = (id) => {
@@ -41,12 +31,8 @@ const MyBookings = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
-                    alert('deleted!')
-                    // if (data.deletedCount) {
-                    //     const remaingMyBookings = myBook.filter(data => data._id !== id);
-                    //     setMyBook(remaingMyBookings)
-                    // }
-                })
+                    alert('Deleted! Please refresh!');
+                });
         }
     }
 
@@ -62,18 +48,20 @@ const MyBookings = () => {
                             <th>Phone</th>
                             <th>Email</th>
                             <th>Status</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
                         {
+                            // myBookings.map(book => <tr>
                             myBookings.map(book => <tr>
                                 <td>{book._id}</td>
                                 <td>{book.name}</td>
                                 <td>{book.phone}</td>
                                 <td>{book.email}</td>
+                                <td>{book.status ? 'Approved' : 'Pending'}</td>
                                 <td>
-                                    <button>{book.status ? 'Approved' : 'Pending'}</button>
-                                    <button onClick={() => handleCancel(book._id)}>Cencel</button>
+                                    <button onClick={() => handleCancel(book._id)}>Cencel Booking</button>
 
                                 </td>
                             </tr>)
