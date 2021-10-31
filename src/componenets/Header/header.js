@@ -1,9 +1,14 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Container, Nav, Navbar, NavDropdown, DropdownButton, Dropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import logo from '../../images/logo.png'
-const header = () => {
-    const user = {};
+import useAuth from '../../hooks/useAuth';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+import logo from '../../images/logo.png';
+const userLogo = <FontAwesomeIcon icon={faUser} />
+
+const Header = () => {
+    const { user, logOut } = useAuth();
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" sticky="top">
@@ -44,12 +49,12 @@ const header = () => {
                                             title={user.displayName}
                                             className="mt-2"
                                         >
-                                            <Dropdown.Item href="#/action-1" active>
+                                            <Dropdown.Item onClick={logOut} href="#/action-1" active>
                                                 LogOut
                                             </Dropdown.Item>
-                                            <Dropdown.Item href="/account">Account</Dropdown.Item>
+                                            <Dropdown.Item href="#/action-2">Account</Dropdown.Item>
                                         </DropdownButton>
-                                        : <Nav.Link as={Link} to="/login"> Login</Nav.Link>}
+                                        : <Nav.Link as={Link} to="/login">{userLogo} Login</Nav.Link>}
                                 </Navbar.Text>
                             </Navbar.Collapse>
                         </Nav>
@@ -60,4 +65,4 @@ const header = () => {
     );
 };
 
-export default header;
+export default Header;

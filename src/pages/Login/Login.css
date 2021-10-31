@@ -1,0 +1,16 @@
+.login-form form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.other-login {
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+}
+.other-login img {
+   width: 40px;
+   height: 40px;
+}

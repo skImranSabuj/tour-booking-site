@@ -1,7 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { yupResolver } from '@hookform/resolvers/yup';
+import './Login.css';
 import * as yup from "yup";
+import { Button, ButtonGroup } from "react-bootstrap";
+import googleIcon from '../../images/google.png'
+import useFirebase from "../../hooks/useFirebase";
+import { useHistory, useLocation } from "react-router";
 
 const schema = yup.object({
     firstName: yup.string().required(),
@@ -9,25 +13,46 @@ const schema = yup.object({
 }).required();
 
 const Login = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm({
-        resolver: yupResolver(schema)
-    });
+    const { register, handleSubmit, reset } = useForm();
+    const { signInUsingGoogle } = useFirebase();
+    const location = useLocation();
+    const history = useHistory();
+    const redirect_uri = location.state?.from || '/home';
     const onSubmit = data => console.log(data);
-
+    const handleGoogleLogin = () => {
+        signInUsingGoogle()
+            .then(result => {
+                history.push(redirect_uri);
+            })
+    }
     return (
-        <div>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input type="text" {...register("Name")} placeholder="your Name" />
-                <p>{errors.firstName?.message}</p>
+        <div className="login-page">
+            <div className="login-form">
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <label>Place Name:</label>
+                    {/* <input {...register("place_name")} defaultValue={country} /> */}
+                    <input type="number" {...register("phone")} defaultValue={880} />
+                    <input {...register("email", { required: true })} placeholder="Your Email" />
 
-                <input type="email" {...register("Email")} placeholder="your Email" />
-                <p>{errors.firstName?.message}</p>
+                    <input type="number" {...register("cost")} placeholder="Estimated Cost" />
+                    <input type="number" {...register("days")} placeholder="how Long (Days)" />
+                    <input type="number" {...register("rating")} placeholder="Rate the place out of 5" />
 
-                <input {...register("age")} />
-                <p>{errors.age?.message}</p>
+                    <input type="submit" />
+                </form>
+            </div>
+            <h6 className="text-center">------ or ------</h6>
+            <div className="other-login">
+                <ButtonGroup aria-label="Basic example">
+                    <Button variant="outline-secondary">
+                        <img src={googleIcon} alt="" />
+                    </Button>
+                    <Button variant="outline-secondary" onClick={handleGoogleLogin}>Log in with Google </Button>
+                </ButtonGroup>
+            </div>
 
-                <input type="submit" />
-            </form>
+
+
         </div>
     );
 };
