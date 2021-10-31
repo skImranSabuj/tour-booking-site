@@ -14,7 +14,7 @@ const Booking = () => {
     const [place, setPlace] = useState({});
     const { id } = useParams();
     useEffect(() => {
-        fetch(`http://localhost:5000/places/${id}`)
+        fetch(`https://damp-wildwood-05961.herokuapp.com/places/${id}`)
             .then(res => res.json())
             .then(data => setPlace(data));
     }, []);
@@ -44,7 +44,7 @@ const Booking = () => {
         const savedCart = getStoredCart();
         data.bookings = savedCart;
         console.log('Updated data: ', data)
-        axios.post('http://localhost:5000/bookings', data)
+        axios.post('https://damp-wildwood-05961.herokuapp.com/bookings', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Added successfully');

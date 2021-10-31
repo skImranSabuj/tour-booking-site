@@ -14,6 +14,8 @@ import Booking from './pages/Booking/Booking';
 import AuthProvider from './context/AuthProvider';
 import AllBookings from './pages/AllBookings/AllBookings';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
+import Footer from './componenets/Footer/Footer';
+import { NotFound } from 'http-errors';
 
 function App() {
   return (
@@ -33,19 +35,25 @@ function App() {
             <Route path="/login">
               <Login></Login>
             </Route>
-            <Route path="/details/:id">
+            <PrivateRoute path="/details/:id">
               <DetailService></DetailService>
-            </Route>
-            <Route path="/booking/:id">
+            </PrivateRoute>
+            <PrivateRoute path="/booking/:id">
               <Booking></Booking>
-            </Route>
+            </PrivateRoute>
             <PrivateRoute path="/allbooking">
               <AllBookings></AllBookings>
             </PrivateRoute>
             <PrivateRoute path="/addService">
               <AddService></AddService>
             </PrivateRoute>
+            <Route path="*">
+              <NotFound></NotFound>
+            </Route>
           </Switch>
+          <Route>
+            <Footer></Footer>
+          </Route>
         </Router>
       </AuthProvider>
 

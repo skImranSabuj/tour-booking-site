@@ -10,7 +10,7 @@ const AddPlace = () => {
     const onSubmit = data => {
         console.log(data);
 
-        axios.post('http://localhost:5000/places', data)
+        axios.post('https://damp-wildwood-05961.herokuapp.com/places', data)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('added successfully');
