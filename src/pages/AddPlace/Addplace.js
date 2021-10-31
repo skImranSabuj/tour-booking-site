@@ -21,8 +21,8 @@ const AddPlace = () => {
 
     return (
         <div className="add-service">
-            <h2>Please Add a Place</h2>
-            <form onSubmit={handleSubmit(onSubmit)}>
+            <h2 className="text-center py-5">Please Add a Place</h2>
+            <form onSubmit={handleSubmit(onSubmit)} className="pb-5">
                 <input {...register("place_name", { required: true, maxLength: 30 })} placeholder="Place Name" />
                 <input {...register("country", { required: true, maxLength: 30 })} placeholder="Countey" />
                 <input {...register("about", { required: true, maxLength: 30 })} placeholder="About The Place" />

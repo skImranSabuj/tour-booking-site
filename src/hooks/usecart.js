@@ -27,7 +27,7 @@ const useCart = () => {
                             storedCart.push(addedPlaces);
                         }
                     }
-                    setCart(storedCart);
+        setCart(savedCart);
                 }
             })
 

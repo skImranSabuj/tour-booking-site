@@ -2,7 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import './Login.css';
 import * as yup from "yup";
-import { Button, ButtonGroup } from "react-bootstrap";
+import { Button, ButtonGroup, Form } from "react-bootstrap";
 import googleIcon from '../../images/google.png'
 import useFirebase from "../../hooks/useFirebase";
 import { useHistory, useLocation } from "react-router";
@@ -37,7 +37,11 @@ const Login = () => {
                     <input type="number" {...register("cost")} placeholder="Estimated Cost" />
                     <input type="number" {...register("days")} placeholder="how Long (Days)" />
                     <input type="number" {...register("rating")} placeholder="Rate the place out of 5" />
-
+                    <Form.Check
+                        type="switch"
+                        id="custom-switch"
+                        label="Check this switch"
+                    />
                     <input type="submit" />
                 </form>
             </div>

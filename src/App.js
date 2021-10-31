@@ -12,6 +12,8 @@ import Login from './pages/Login/Login';
 import AddService from './pages/AddPlace/Addplace';
 import Booking from './pages/Booking/Booking';
 import AuthProvider from './context/AuthProvider';
+import AllBookings from './pages/AllBookings/AllBookings';
+import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -37,9 +39,12 @@ function App() {
             <Route path="/booking/:id">
               <Booking></Booking>
             </Route>
-            <Route path="/addService">
+            <PrivateRoute path="/allbooking">
+              <AllBookings></AllBookings>
+            </PrivateRoute>
+            <PrivateRoute path="/addService">
               <AddService></AddService>
-            </Route>
+            </PrivateRoute>
           </Switch>
         </Router>
       </AuthProvider>

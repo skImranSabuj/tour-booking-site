@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
-import { Container, Nav, Navbar, NavDropdown, DropdownButton, Dropdown } from 'react-bootstrap';
+import { Container, Nav, Navbar, NavDropdown, DropdownButton, Dropdown, Button, ButtonGroup } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
@@ -30,6 +30,7 @@ const Header = () => {
                             <Nav.Link as={Link} to="/about">About</Nav.Link>
                             <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
                             <Nav.Link as={Link} to="/addService">Add Service</Nav.Link>
+                            <Nav.Link as={Link} to="/allbooking">All Bookings</Nav.Link>
                             <NavDropdown title="All users" id="collasible-nav-dropdown">
                                 <NavDropdown.Item href="https://surokkha.gov.bd/" target="_blank"></NavDropdown.Item>
                                 <NavDropdown.Item href="https://www.bmdc.org.bd/search-doctor" target="_blank">Doctors</NavDropdown.Item>
@@ -54,7 +55,12 @@ const Header = () => {
                                             </Dropdown.Item>
                                             <Dropdown.Item href="#/action-2">Account</Dropdown.Item>
                                         </DropdownButton>
-                                        : <Nav.Link as={Link} to="/login">{userLogo} Login</Nav.Link>}
+                                        : <Nav.Link as={Link} to="/login"><ButtonGroup aria-label="Basic example">
+                                            <Button variant="outline-info">
+                                                {userLogo}
+                                            </Button>
+                                            <Button variant="outline-info">Login</Button>
+                                        </ButtonGroup></Nav.Link>}
                                 </Navbar.Text>
                             </Navbar.Collapse>
                         </Nav>
