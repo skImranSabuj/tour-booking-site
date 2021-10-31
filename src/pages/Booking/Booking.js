@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { useParams } from 'react-router';
 import useAuth from '../../hooks/useAuth';
 import useCart from '../../hooks/usecart';
-import usePlaces from '../../hooks/usePlaces';
 import { addToDb, getStoredCart } from '../../localStorage/tempDb';
 
 const Booking = () => {
@@ -19,11 +18,11 @@ const Booking = () => {
             .then(data => setPlace(data));
     }, []);
 
-    const { place_name, key, description, days, about, thumb, country, rating, cost } = place;
+    const { _id, place_name, key, description, days, about, thumb, country, rating, cost } = place;
 
     const onSubmit = data => {
         // save to local storage (for now)
-        addToDb(place._id);
+        addToDb(_id);
 
         console.log(data, place);
         const exists = cart.find(pd => pd._id === place._id);

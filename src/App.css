@@ -1,13 +1,16 @@
 .App {
   text-align: center;
   font-family: 'Abril Fatface', cursive;
+  font-family: Tahoma;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
-
+h1,h2,h3,h4{
+  font-family:'Abril Fatface', cursive;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;

@@ -16,6 +16,7 @@ import AllBookings from './pages/AllBookings/AllBookings';
 import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import Footer from './componenets/Footer/Footer';
 import { NotFound } from 'http-errors';
+import MyBookings from './pages/MyBookings/MyBookings';
 
 function App() {
   return (
@@ -46,6 +47,9 @@ function App() {
             </PrivateRoute>
             <PrivateRoute path="/addService">
               <AddService></AddService>
+            </PrivateRoute>
+            <PrivateRoute path="/myBookings">
+              <MyBookings></MyBookings>
             </PrivateRoute>
             <Route path="*">
               <NotFound></NotFound>

@@ -26,18 +26,13 @@ const Header = () => {
                             {/* <Link to="/home">Home</Link>
                             <Link to="/about">Home</Link> */}
                             <Nav.Link as={Link} to="/home">Home</Nav.Link>
-                            <Nav.Link as={Link} to="/services">Places</Nav.Link>
+                            {/* <Nav.Link as={Link} to="/services">Places</Nav.Link> */}
                             <Nav.Link as={Link} to="/about">About</Nav.Link>
                             <Nav.Link as={Link} to="/contact">Contact</Nav.Link>
                             <Nav.Link as={Link} to="/addService">Add Service</Nav.Link>
                             <Nav.Link as={Link} to="/allbooking">All Bookings</Nav.Link>
-                            <NavDropdown title="All users" id="collasible-nav-dropdown">
-                                <NavDropdown.Item href="https://surokkha.gov.bd/" target="_blank"></NavDropdown.Item>
-                                <NavDropdown.Item href="https://www.bmdc.org.bd/search-doctor" target="_blank">Doctors</NavDropdown.Item>
-                                <NavDropdown.Item href="#action/3.3">Diagonistic</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="https://corona.gov.bd/" target="_blank">Corona info</NavDropdown.Item>
-                            </NavDropdown>
+                            <Nav.Link as={Link} to="/myBookings">My Bookings</Nav.Link>
+
                         </Nav>
                         <Nav>
                             <Navbar.Collapse className="justify-content-end">
