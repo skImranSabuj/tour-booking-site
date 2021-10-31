@@ -17,6 +17,7 @@ import PrivateRoute from './pages/PrivateRoute/PrivateRoute';
 import Footer from './componenets/Footer/Footer';
 import { NotFound } from 'http-errors';
 import MyBookings from './pages/MyBookings/MyBookings';
+import Contact from './componenets/Contact/Contact';
 
 function App() {
   return (
@@ -35,6 +36,9 @@ function App() {
             </Route>
             <Route path="/login">
               <Login></Login>
+            </Route>
+            <Route path="/contact">
+              <Contact></Contact>
             </Route>
             <PrivateRoute path="/details/:id">
               <DetailService></DetailService>
